@@ -5,17 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tinder-swipe</title>
 </head>
+
+    <style>
+        *,*::before,*::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            user-select: none;
+            background: #e5e5e5;
+        }
+
+        main{
+            background: url('./images//iphone.webp') no-repeat;
+            background-size: contain;
+            width: 320px;
+            height: 640px;
+            display: flex;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+
+        }
+
+        section{
+            background-color: #f6f6f6;
+            width: 100%;
+            border-radius: 32px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            padding: 16px 6px;
+            margin: 24px;
+
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+
+            & img{
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        footer{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 12px;
+            padding: 0 24px;
+            justify-content: center;
+            align-items: center;
+
+
+            & button {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+            }
+        }
+
+    </style>
+
 <body>  
     <main>
         <section>
             <header>
-                <img src="" alt="Tinder Logo">
+                <img src="./images//tinder-logo.webp" alt="Tinder Logo">
             </header>
-        </section>
-    </main>
-    <div class="cards">
+        
+        <div class="cards">
+            <article>
+                <img src="./images/2.webp" alt="Alex, brown hair man, 25 years old">
+                <h2>Alex <span>25</span></h2>
+                <div class="choice nope">NOPE</div>
+                <div class="choice like">Like</div>
 
-    </div>
-    <footer></footer>
+            
+            </article>
+
+        </div>
+
+        <footer>
+            <button aria-label="" >
+            </button>
+            <button aria-label="" >
+            </button>
+            <button aria-label="" >
+
+            </button>
+            <button aria-label="" >
+
+            </button>
+            <button aria-label="" >
+
+            </button>
+        </footer>
+    </section>
+    </main>
 </body>
 </html>
