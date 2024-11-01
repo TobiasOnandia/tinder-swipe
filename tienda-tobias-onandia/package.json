@@ -1,0 +1,17 @@
+{
+  "name": "tienda-tobias-onandia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node my-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "17.1.2"
+  }
+
+
+}

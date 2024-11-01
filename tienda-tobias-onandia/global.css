@@ -1,0 +1,68 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --foreground: #1A1E33;  
+  --primary: #1C1F33;  
+  --secondary: #F3F3F3; 
+  --muted: #F3F3F3; 
+  --muted-foreground: #7B7C80; 
+  --accent: #F3F3F3; 
+  --accent-foreground: #1A1E33;  
+  --border: #D4D9E5;  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Montserrat', sans-serif; 
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+ 
+a {
+    text-decoration: none;
+    color: var(--input);
+}

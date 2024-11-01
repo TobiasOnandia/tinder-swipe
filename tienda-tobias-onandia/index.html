@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tienda</title>
+
+    <!-- Enlace a Google Fonts para Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    /* Reset stylesheet to reduce browser inconsistencies */
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+        font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    header {
+        width: 100%;
+        height: 50px;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+    }
+    ul {
+        display: flex;
+        width: 100%;
+        flex: content;
+        justify-content: space-around;
+    }
+
+    div {
+        border: 1px solid #eceeff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        gap: 4px;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: #7866ff;
+        color: #eceeff;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+
+        &[href="/pages/login"] {
+            background-color: #dde0ff;
+            color: #7866ff;
+        }
+    
+    
+        &:hover {
+            scale: .98;
+        }
+    }
+
+   
+
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Sobre nosotros</li>
+            </ul>
+            <div>
+                <a href="/pages/login/login.html">
+                    Iniciar Sesión
+                </a>
+                <a href="/pages/signup/signup.html">
+                    Registrarse
+                </a>
+            </div>
+              
+              
+        </nav>
+    </header>
+</body>
+</html>

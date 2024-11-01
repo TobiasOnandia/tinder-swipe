@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Iniciar Sesion</title>
+</head>
+    <style>
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+    }
+
+    form {
+        width: 400px;
+        height: 550px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 20px;
+        border: 1px solid var(--muted-foreground);
+
+
+    }
+    legend{
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        & + p {
+            font-weight: 200;
+        }
+        
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        position: relative;
+    }
+
+    input{
+        height: 20px;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: transparent;
+        border: 1px solid var(--muted-foreground);
+        color: var(--muted);
+        outline: none;
+    }
+
+    label{
+        font-size: .9rem;
+    }
+
+    menu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button{
+        height: 40px;
+        border-radius: 5px;
+        background-color: var(--secondary);
+        outline: none;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover{
+            background-color: var(--muted-foreground);
+        }
+        
+    }
+    a{
+
+        color: var(--muted);
+        transition: all 0.3s ease;
+        &:hover{
+            color: var(--muted-foreground);
+        }
+   
+    }
+
+     a[href="/pages/signup/login.html"]{
+            text-align: center;
+            font-size: .9rem;
+        }
+
+    </style>
+
+
+    <script type="module">
+            const $ = (el ) => document.querySelector(el);  
+            const $$ = (el) => document.querySelectorAll(el);
+
+            const form = document.querySelector('form');
+
+        
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const fields = Object.fromEntries(formData.entries());
+
+
+                if(fields.password !== fields.passwordConfirm){
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+
+                localStorage.setItem('user', JSON.stringify({
+                    name: fields.name,
+                    email: fields.email,
+                    password: fields.password
+                }));
+                
+                window.location.href = '/'
+
+
+            });
+
+
+    </script>
+
+<body>
+    <main>
+        <form action="">
+            <section>
+                <legend>Registro</legend>
+                <p>Crea tu cuenta para acceder a nuestros servicios.</p>
+            </section>
+            <fieldset>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <label for="passwordCconfirm">Confirmar Contraseña</label>
+                <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirmar Contraseña" required>
+            </fieldset>
+
+            <menu>
+                <button class="login">Registrarse</button>
+           
+            </menu>
+       
+
+            <a href="/pages/signup/login.html">¿Ya tienes una cuenta? Inicia sesión</a>
+        </form>
+    </main>
+</body>
+</html>
