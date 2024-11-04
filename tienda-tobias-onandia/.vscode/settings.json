@@ -1,0 +1,6 @@
+{
+    "oxc.enable": true,
+    "conventionalCommits.scopes": [
+        "newScope"
+    ]
+}
