@@ -1,22 +1,15 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --foreground: #1A1E33;  
-  --primary: #1C1F33;  
-  --secondary: #F3F3F3; 
-  --muted: #F3F3F3; 
-  --muted-foreground: #7B7C80; 
-  --accent: #F3F3F3; 
-  --accent-foreground: #1A1E33;  
-  --border: #D4D9E5;  
+  --foreground: #f4f4f5;
+  --primary: #09090b;  
+  --secondary: #a1a1aa; 
+  --muted: #d4d4d8; 
+  --muted-foreground: #27272a;
+  --accent: #18181b; 
+  --accent-foreground: #e4e4e7;  
+  --border: #52525b;  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 * {
     margin: 0;
@@ -33,8 +26,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
-}
+    font-family: 'Montserrat', sans-serif; 
+} 
 ol, ul {
     list-style: none;
 }
@@ -53,8 +46,8 @@ table {
 
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--primary);
+  background: #fff;
   font-family: 'Montserrat', sans-serif; 
 
 }
