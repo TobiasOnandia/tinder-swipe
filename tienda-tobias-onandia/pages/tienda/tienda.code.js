@@ -5,6 +5,15 @@ const category = $('#category')
 const asideCart = $('.cart')
 const cart = []
 
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header')
+  if (window.scrollY > 0) {
+    header.classList.add('scrolled')
+  } else {
+    header.classList.remove('scrolled')
+  }
+})
+
 async function getProducts () {
   const response = await fetch('https://dummyjson.com/products')
     .then(res => res.json())
@@ -17,10 +26,10 @@ async function getProducts () {
 function generateCarrousel (products) {
   const carrousel = $('.ulSlider')
 
-  products.forEach(product => {
+  products.forEach((product) => {
     const productElement = document.createElement('li')
     productElement.innerHTML = `
-                  <img src="${product.thumbnail}" alt="${product.title}">
+                  <img src="${product.images[0]}" alt="${product.title}">
         `
     carrousel.appendChild(productElement)
   })
@@ -28,15 +37,18 @@ function generateCarrousel (products) {
 }
 
 function generateCard (products) {
-  products.forEach(product => {
+  products.forEach((product) => {
     const productElement = document.createElement('article')
     productElement.classList.add('product')
     productElement.innerHTML = `
-            <img src="${product.thumbnail}" alt="${product.title}">
-            <h2>${product.title}</h2>
-            <p>${product.description}</p>
-            <p>Precio: $ ${product.price}</p>
-            <button class="addToCart">Añadir al carrito</button>
+             <img src="${product.images[0]}" alt="${product.title}">
+             <h2>${product.title}</h2>
+             <p>${product.description}</p>
+            
+            <section>
+              <p>Precio: $ ${product.price}</p>
+              <button class="addToCart">Añadir al carrito</button>
+            </section>
         `
     const addButton = productElement.querySelectorAll('.addToCart')
     addButton.forEach(button => button.addEventListener('click', () => addToCart(product)))
@@ -110,7 +122,6 @@ function renderProductsToCart () {
     productElement.innerHTML = `
             <img src="${product.thumbnail}" alt="${product.title}">
             <h2>${product.title}</h2>
-            <p>${product.description}</p>
             <p>Precio: $ ${product.price}</p>
             <button class="removeFromCart">Eliminar</button>
 

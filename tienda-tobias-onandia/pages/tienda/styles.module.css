@@ -8,8 +8,28 @@ header{
     height: 75px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--muted-foreground);
+    position: fixed;
+    top: 0;
     justify-content: space-between;
+    background-color: var(--muted-foreground);
+    color: var(--foreground);
+    z-index: 20;
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(80px);
+        &.scrolled{
+            opacity: 0;
+            z-index: -2;
+        }
+    }
 }
 
 
@@ -97,18 +117,17 @@ select{
 }
 
 button, .goToCart{
-    width: 100%;
+    width: max-content;
     height: 40px;
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid var(--muted-foreground);
-    color: var(--primary);
+    background-color: var(--muted-foreground);
+    color: var(--foreground);
     outline: none; 
-    background-color: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: var(--secondary);
     text-align: center;
+
     &:hover{
         background-color: var(--secondary);
         color: var(--primary);
@@ -133,7 +152,11 @@ button, .goToCart{
 }
 
 main{
-     padding: 0px 70px;
+     padding: 0px 20px;
+}
+img {
+    width: 200px;
+    height: 200px;
 }
 
 .gridProducts{
@@ -142,22 +165,43 @@ main{
     gap: 20px;
 }
 
+
 article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     padding: 20px;
     border-radius: 5px;
-    gap: 10px;
+    text-wrap: pretty;
+    gap: 30px;
     transition: all 0.3s ease;
-    border: 1px solid var(--border);
-
+    background-color: var(--background);
     &:hover{
         scale: 1.005;
         box-shadow: 0 0 10px var(--secondary);
+        
+    }
+    box-shadow: 0 0 10px var(--secondary);
+
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & > p{
+        font-weight: 500;
     }
 }
+
+
 
 .open {
     position: fixed;
@@ -184,8 +228,10 @@ article {
 .carrousel {
     width: 100%;
     height: auto;
-    margin: 50px auto 0;
+    margin: 75px 10px  0px;
+    border-radius: 5px;
     overflow: hidden;
+    background-color: var(--foreground);
 
     & ul {
         display: flex;
@@ -202,10 +248,13 @@ article {
 
 
     & img {
-        width: 100%;
+        width: 720px;
+        height: 720px;
+        aspect-ratio: 1/1;
         object-fit: contain;
     }
 }
+
 
 
 @keyframes slide {

@@ -47,7 +47,7 @@ table {
 
 body {
   color: var(--primary);
-  background: #fff;
+  background-color: var(--foreground);
   font-family: 'Montserrat', sans-serif; 
 
 }
