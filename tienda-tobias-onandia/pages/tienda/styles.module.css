@@ -13,7 +13,7 @@ header{
     justify-content: space-between;
     background-color: var(--muted-foreground);
     color: var(--foreground);
-    z-index: 20;
+    z-index: 11;
 
     &::after{
         content: '';
@@ -44,7 +44,7 @@ nav{
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 1;
+        flex: 0.5;
     }
 }
 ul {
@@ -69,20 +69,34 @@ li{
             padding: 10px;
             padding-right: 40px;
             border: 1px solid var(--border);
-            color: var(--muted);
+            color: var(--primary);
             outline: none;
-            background-color: transparent;
         }
         & > svg{
             position: absolute;
             right: 2%;
+            stroke: var(--primary);
             
         }
     }
 }
 
+
+.showPrice{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.range-value{
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+}
+
 .cart{
     display: none;
+    z-index: 9999;
+
 }
 
 .openCart {
@@ -90,15 +104,17 @@ li{
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 6px 10px;
+    padding: 8px;
     border-radius: 5px;
     transition: all 0.3s ease;
     height: max-content;
+    background-color: var(--foreground);
+    color: var(--muted-foreground);
     &:hover{
         background-color: var(--secondary);
         color: var(--primary);
+        scale: 0.98;
     }
-
 }
 
 select{
@@ -106,17 +122,16 @@ select{
     height: 40px;
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid var(--muted-foreground);
     color: var(--muted);
     outline: none; 
-    background-color: transparent;
+    color: var(--primary);
 
     & > option{
         color: var(--primary);
     }
 }
 
-button, .goToCart{
+button{
     width: max-content;
     height: 40px;
     border-radius: 5px;
@@ -129,8 +144,20 @@ button, .goToCart{
     text-align: center;
 
     &:hover{
-        background-color: var(--secondary);
-        color: var(--primary);
+        background-color: var(--primary);
+    }
+}
+
+.goToCart{
+    width: max-content;
+    background-color: var(--muted-foreground);
+    color: var(--foreground);
+    padding: 12px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: var(--primary);
+        text-decoration: none;
     }
 }
 
@@ -140,15 +167,14 @@ button, .goToCart{
     align-items: center;
 }
 
-.goToCart{
-    width: max-content;
-}
-
  .closeCart{
-    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    background-color: var(--muted-foreground);
+
+
 }
 
 main{
@@ -161,7 +187,7 @@ img {
 
 .gridProducts{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 
@@ -171,17 +197,18 @@ article {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    width: 400px;
     border-radius: 5px;
     text-wrap: pretty;
     gap: 30px;
     transition: all 0.3s ease;
     background-color: var(--background);
+    box-shadow: 0 0 10px var(--secondary);
     &:hover{
         scale: 1.005;
         box-shadow: 0 0 10px var(--secondary);
         
     }
-    box-shadow: 0 0 10px var(--secondary);
 
 }
 
@@ -216,11 +243,16 @@ section{
     flex-direction: column;
     gap: 10px;
     overflow-y: scroll;
+    overflow-x: hidden;
     transform: translateX(100%);
     animation: openCart 0.5s ease forwards;
+
+    & > p {
+        position: absolute;
+        inset: 30%;
+        width: 100%;
+    }
 }
-
-
 
 
 /* Carrousel */
@@ -276,3 +308,5 @@ section{
         transform: translateX(0);
     }
 }
+
+

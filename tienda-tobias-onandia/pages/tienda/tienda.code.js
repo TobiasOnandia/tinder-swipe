@@ -3,7 +3,12 @@ const $ = (el) => document.querySelector(el)
 const gridProducts = $('.gridProducts')
 const category = $('#category')
 const asideCart = $('.cart')
+
 const cart = []
+
+$('.range').addEventListener('input', (e) => {
+  $('.range-value').textContent = e.target.value
+})
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header')
@@ -62,6 +67,7 @@ function addToCart (product) {
     window.alert('El producto ya esta en el carrito')
     return
   }
+
   cart.push(product)
 
   window.localStorage.setItem('cart', JSON.stringify(cart))
@@ -116,6 +122,20 @@ function renderProductsToCart () {
             </section>
         
         `
+
+  if (cart.length === 0) {
+    asideCart.innerHTML = `
+          <section class="headerAsideCart">
+           <button class="closeCart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+              <a class="goToCart" href="/pages/shop/shop.html">Ir al Carrito</a>
+              </section>
+              <p>Tu carrito esta vacio</p>
+        
+        `
+  }
+
   cart.forEach((product) => {
     const productElement = document.createElement('article')
     productElement.classList.add('product')
@@ -146,6 +166,7 @@ function addCloseCart () {
 
 $('#toggleCart').addEventListener('click', () => {
   asideCart.classList.toggle('open')
+
   renderProductsToCart()
 })
 

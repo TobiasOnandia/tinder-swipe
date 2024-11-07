@@ -34,9 +34,20 @@ function deleteCard (productId, productElement) {
 }
 
 function generateCard () {
+  if (productsStorage.length === 0) {
+    const productElement = document.createElement('article')
+
+    productElement.innerHTML = `
+      <p>No hay productos en el carrito</p>
+   `
+
+    main.appendChild(productElement)
+  }
+
   productsStorage.forEach((product) => {
     const productElement = document.createElement('article')
     product.displayStock = 1
+
     productElement.innerHTML = `
      <div>
       <figure>
@@ -82,13 +93,18 @@ function calculatePrice () {
     return sum + product.price * product.displayStock
   }, 0)
 
-  $('.totalPrice').innerHTML = totalPrice
+  $('.totalPrice').textContent = `$ ${totalPrice}`
+  $('.subPrice').textContent = `$ ${totalPrice}`
 }
 const totalEl = document.createElement('seccion')
 totalEl.classList.add('total')
 
 totalEl.innerHTML = `
-  <h3>Total:  <span class='totalPrice'>$</span></h3>
+  <h3>SubTotal:  <span class='subPrice'>$ 0</span></h3>
+  <h3>Descuento:  <span >$ 0</span></h3>
+  <h3>Envio:  <span >Gratis</span></h3>
+  <h3>Total:  <span class='totalPrice'></span></h3>
+
   <button class="checkout">Comprar</button>
   `
 

@@ -57,7 +57,7 @@ main {
     background-color: var(--foreground);
     width: 100%;
     gap: 10px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 200px);
     overflow-y: scroll;
 }
 
@@ -113,8 +113,9 @@ span{
 }
 
 h3{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
+
 }
 
 footer{
