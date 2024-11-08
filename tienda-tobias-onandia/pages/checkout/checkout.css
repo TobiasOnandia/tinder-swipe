@@ -1,0 +1,126 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--muted-foreground);
+    color: var(--foreground);
+}
+
+main {
+    width: 100%;
+    border: 1px solid var(--border);
+    display: flex;
+    background-color: var(--background);
+}
+
+section {
+    height: 95vh;
+}
+
+.contentForm{
+    display: flex;
+    flex: 1;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--background); 
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+}
+
+.infoUser{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 20px;
+}
+
+.method{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+legend{
+   margin-bottom: 20px;
+}
+
+.card{
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+    'tarjeta tarjeta'
+    'seguridad expiracion';
+}
+
+label[for='tarjeta']{
+    grid-area: tarjeta;
+}
+
+label[for="expiracion"]{
+    grid-area: expiracion;
+}
+
+label[for="seguridad"]{
+    grid-area: seguridad;
+}
+
+
+legend,h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+p{
+    color: var(--secondary);
+}
+
+
+
+input[type="text"]{
+    padding: .5rem;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;   
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    height: max-content;
+}
+
+button{
+    height: max-content;
+    padding: .5rem 1rem;
+    background-color: var(--muted-foreground);
+    color: var(--foreground);
+    border-radius: 5px;
+}
+
+.checkoutProducts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    align-items: center;
+    height: 100%;
+    flex: 0.4;
+}
+
+
+article{
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--secondary);
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}

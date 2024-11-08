@@ -9,155 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pages/checkout/checkout.css">
+
+    <script type="module" src="/pages/checkout/checkout.script.js"></script>
 </head>
 
 
-<style>
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background-color: var(--muted-foreground);
-        color: var(--foreground);
-    }
-
-    main {
-        padding: 1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-
-    }
-
-    form{
-        display: grid;
-        gap: 1rem;
-        padding: 1rem;
-        background-color: var(--background); 
-        max-width: max-content;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px var(--border);
-    }
-
-    fieldset{
-        display: grid;
-        gap: 1rem;
-        grid-template-areas: 
-            "nombre nombre"
-            "tarjeta tarjeta"
-            "expiracion codigo-seguridad"
-            "direccion direccion"
-            "ciudad postal"
-            ;
-
-    }
-
-    legend,h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-
-    p{
-        color: var(--secondary);
-    }
-
-    label{
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-
-
-    }
-
-    input{
-        padding: .5rem;
-        border: 1px solid var(--secondary);
-        border-radius: 5px;   
-        font-size: 1rem;
-        outline: none;
-    }
-
-    label[for="nombre"]{
-        grid-area: nombre;
-    }
-    label[for="numero-tarjeta"]{
-        grid-area: tarjeta;
-    }
-    label[for="fecha-expiracion"]{
-        grid-area: expiracion;
-    }
-    label[for="codigo-seguridad"]{
-        grid-area: codigo-seguridad;
-    }
-    label[for="direccion"]{
-        grid-area: direccion;
-    }
-    label[for="ciudad"]{
-        grid-area: ciudad;
-    }
-    label[for="postal"]{
-        display: flex;
-        grid-area: postal;
-    }
-
-
-    button{
-        padding: .5rem 1rem;
-        background-color: var(--muted-foreground);
-        color: var(--foreground);
-        border-radius: 5px;
-    }
-
-    section:last-child{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--background);
-        color: var(--muted-foreground);
-        box-shadow: 0px 0px 10px var(--border);
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-
-    table{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        align-items: center;
-
-    }
-
-    thead, tbody{
-        border-bottom: 1px solid var(--secondary);
-        padding: 10px;
-        width: 100%;
-    }
-
-    tfoot{
-        padding: 10px;
-        width: 100%;
-    }
-
-
-    tr{
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 1;
-    }
-
-    tfoot {
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
-</style>
 
 <body>
     <header>
@@ -166,79 +23,81 @@
     </header>
 
     <main>
-        <section>
+
+        <section class="checkoutProducts">
             
-        <form action="">
-            <legend>Información de Pago</legend>
-            <p>Ingrese los detalles de su tarjeta y dirección de envío.</p>
+        </section>
 
-            <fieldset>
-                <label for="nombre">
-                    <span>Nombre</span>
-                    <input type="text" id="nombre" name="nombre" placeholder="Hugo Sanchez"">
-                </label>
 
-                <label for="numero-tarjeta">
-                     <span>Número de tarjeta</span>
-                    <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="1234 5678 9012 3456">
-                </label>
+        <section class="contentForm">
+            <form action="">
 
-                <label for="fecha-expiracion">
-                    <span>Fecha de expiración</span>
-                    <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/YY">
-                </label>
-                <label for="codigo-seguridad">
-                    <span>Código de seguridad</span>
-                    <input type="text" id="codigo-seguridad" name="codigo-seguridad" placeholder="123">
-                </label>
+                <fieldset  class="infoUser">
+                    <legend>Información del Cliente</legend>
+                    <label for="nombre">
+                        <span>Nombre</span>
+                        <input type="text" id="nombre" name="nombre" placeholder="Hugo Sanchez"">
+                    </label>
 
-                <label for="direccion">
-                    <span>Dirección</span>
-                    <input type="text" id="direccion" name="direccion" placeholder="calle principal 123">
-                </label>
+                    <label for="correo">
+                        <span>Correo electronico</span>
+                        <input type="text" id="correo" name="correo" placeholder="1234 5678 9012 3456">
+                    </label>
 
-                <label for="ciudad">
-                    <span>Ciudad</span>
-                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
-                </label>
 
-                <label for="postal">
-                    <span>Código postal</span>
-                    <input type="text" id="postal" name="codigo-postal" placeholder="12345">
-                </label>
+                    <label for="direccion">
+                        <span>Dirección</span>
+                        <input type="text" id="direccion" name="direccion" placeholder="calle principal 123">
+                    </label>
 
-            </fieldset>
+                    <label for="telefono">
+                        <span>Telefono</span>
+                        <input type="text" id="telefono" name="telefono" placeholder="2954123456">
+                    </label>
+                </fieldset>
 
-            <button>Pagar</button>
-        </form>
+                <fieldset class="method">
+                    <legend>Método de Pago</legend>
+                    <label for="tarjeta">
+                        <input type="radio" id="tarjeta" value="credito/debito" checked>
+                        <span>Tarjeta de Credito/Debito</span>
+                    </label>
+
+                    <label for="paypal">
+                        <input type="radio" id="paypal" value="paypal" >
+                        <span>PayPal</span>
+                    </label>
+                    
+                    <label for="transferencia">
+                        <input type="radio" id="transferencia" value="transferencia">
+                        <span>Transferencia Bancaria</span>
+                    </label>
+                </fieldset>
+
+                <fieldset class="card">
+                    <legend>Detalles de la Tarjeta</legend>
+                    <label for="tarjeta">
+                        <span>Número de tarjeta</span>
+                        <input type="text" id="tarjeta" name="tarjeta" placeholder="1234 5678 9012 3456">
+                    </label>
+                    <label for="expiracion">
+                        <span>Fecha de expiración</span>
+                        <input type="text" id="expiracion" name="expiracion" placeholder="MM/YY">
+                    </label>
+                    <label for="seguridad">
+                        <span>Código de seguridad</span>
+                        <input type="text" id="seguridad" name="seguridad" placeholder="123">
+                    </label>
+
+                </fieldset>
+
+                <button>Pagar</button>
+            </form>
 
         </section>
 
 
-        <section>
-            <h2>Resumen del Pedido</h2>
-            <table>
-                <thead>
-                    <tr class="header">
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="body">
-                    <tr>
-                        <td>Producto 1</td>
-                        <td>1000</td>
-                    </tr>
-                </tbody>
-                <tfoot class="footer">
-                    <tr>
-                        <td  class="total">Total</td>
-                        <td>10000</td>
-                    </tr>
-                </tfoot>
-
-            </table>
-        </section>
+   
 
     </main>
 

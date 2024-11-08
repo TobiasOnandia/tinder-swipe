@@ -105,7 +105,7 @@ totalEl.innerHTML = `
   <h3>Envio:  <span >Gratis</span></h3>
   <h3>Total:  <span class='totalPrice'></span></h3>
 
-  <button class="checkout">Comprar</button>
+  <a href="/pages/checkout/checkout.html" class="checkout">Comprar</a>
   `
 
 main.appendChild(totalEl)

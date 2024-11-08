@@ -7,7 +7,7 @@ const asideCart = $('.cart')
 const cart = []
 
 $('.range').addEventListener('input', (e) => {
-  $('.range-value').textContent = e.target.value
+  $('.range-value').textContent = `$ ${e.target.value}`
 })
 
 window.addEventListener('scroll', () => {
